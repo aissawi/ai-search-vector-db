@@ -62,4 +62,10 @@ interface ChromaApi {
     Call<Collection> deleteCollection(@Path("tenant_id") String tenantId
                                     ,@Path("database_id") String databaseId,
                                       @Path("collection_id") String collectionId);
+
+
+    @DELETE("api/v2/tenants/{tenant_id}/databases/{database_id}")
+    @Headers({"Content-Type: application/json"})
+    Call<Collection> deleteDatabase(@Path("tenant_id") String tenantId
+            ,@Path("database_id") String databaseId);
 }

@@ -11,6 +11,7 @@ import static java.util.stream.Collectors.toList;
 import dev.langchain4j.data.document.Metadata;
 import dev.langchain4j.data.embedding.Embedding;
 import dev.langchain4j.data.segment.TextSegment;
+import dev.langchain4j.exception.UnsupportedFeatureException;
 import dev.langchain4j.store.embedding.EmbeddingMatch;
 import dev.langchain4j.store.embedding.EmbeddingSearchRequest;
 import dev.langchain4j.store.embedding.EmbeddingSearchResult;
@@ -63,8 +64,17 @@ public class ChromaEmbeddingStore implements EmbeddingStore<TextSegment> {
 
         chromaClient.createTenant(tenantId);
 
+        chromaClient.deleteDatabase(tenantId, databaseId);
+
+
         chromaClient.createDatabase(tenantId, databaseId);
+
+
+
+
         Collection collection = chromaClient.collection(this.tenantId,this.databaseId,this.collectionName);
+
+
         if (collection == null) {
             createCollection();
         } else {
@@ -207,20 +217,13 @@ public class ChromaEmbeddingStore implements EmbeddingStore<TextSegment> {
 
     @Override
     public void removeAll(java.util.Collection<String> ids) {
-        ensureNotEmpty(ids, "ids");
-        chromaClient.deleteEmbeddings(
-                collectionId,
-                DeleteEmbeddingsRequest.builder().ids(new ArrayList<>(ids)).build());
+
+        chromaClient.deleteCollection(this.tenantId,this.databaseId,this.collectionName);
     }
 
     @Override
     public void removeAll(Filter filter) {
-        ensureNotNull(filter, "filter");
-        chromaClient.deleteEmbeddings(
-                collectionId,
-                DeleteEmbeddingsRequest.builder()
-                        .where(ChromaMetadataFilterMapper.map(filter))
-                        .build());
+        chromaClient.deleteCollection(this.tenantId,this.databaseId,this.collectionName);
     }
 
     @Override

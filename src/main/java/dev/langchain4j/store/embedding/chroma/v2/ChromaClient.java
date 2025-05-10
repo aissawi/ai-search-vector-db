@@ -179,6 +179,13 @@ class ChromaClient {
     }
 
 
+    void deleteDatabase(String tenantId,String databaseId) {
+        try {
+            chromaApi.deleteDatabase(tenantId,databaseId).execute();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     void deleteCollection(String tenantId,String databaseId, String collectionId) {
         try {

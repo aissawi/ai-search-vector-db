@@ -19,7 +19,85 @@
 
         <dependency>
             <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-document-parser-apache-tika</artifactId>
+            <version>1.0.0-beta4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-code-execution-engine-judge0</artifactId>
+            <version>1.0.0-beta4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mapdb</groupId>
+            <artifactId>mapdb</artifactId>
+            <version>3.0.9</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.jetbrains.kotlin</groupId>
+                    <artifactId>kotlin-stdlib</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-community-core</artifactId>
+            <version>1.0.0-beta4</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/dev.langchain4j/langchain4j-document-parser-apache-pdfbox -->
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-chroma</artifactId>
+            <version>1.0.0-beta4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-document-loader-amazon-s3</artifactId>
+            <version>1.0.0-beta4</version>
+        </dependency>
+
+
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-document-loader-github</artifactId>
+            <version>1.0.0-beta4</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-document-parser-apache-pdfbox</artifactId>
+            <version>1.0.0-beta4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>3.0.5</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/dev.langchain4j/langchain4j -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j</artifactId>
+            <version>1.0.0-rc1</version>
+
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/dev.langchain4j/langchain4j-core -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-core</artifactId>
+            <version>1.0.0-rc1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/dev.langchain4j/langchain4j-document-parser-apache-poi -->
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-document-parser-apache-poi</artifactId>
             <version>1.0.0-beta4</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
@@ -29,6 +107,12 @@
             <version>1.5.18</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>dev.langchain4j</groupId>
+            <artifactId>langchain4j-embeddings</artifactId>
+            <version>1.0.0-beta4</version>
+        </dependency>
+
         <dependency>
             <groupId>dev.langchain4j</groupId>
             <artifactId>langchain4j-embeddings-all-minilm-l6-v2</artifactId>
